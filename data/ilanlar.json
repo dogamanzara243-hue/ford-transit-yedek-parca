@@ -1,17 +1,18 @@
 [
   {
     "id": "FT-1001",
-    "baslik": "Ford Transit V363 2.2 TDCi Komple Çıkma Motor (Euro 5)",
+    "baslik": "Ford Transit  2.7 190p transit Komple Çıkma Motor (Euro 5)",
     "kategori": "motor",
     "durum": "İkinci El / Çıkma",
-    "uyumlu_model": "2014 - 2018 Transit V363",
+    "uyumlu_model": "1993 - 2002 Transit ",
     "oem_kodu": "BK3Q-6007-AA",
     "fiyat": "Fiyat Sorunuz",
     "one_cikan": true,
     "gorseller": [
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+      "https://github.com/dogamanzara243-hue/ford-transit-yedek-parca/blob/main/data/img/Motor/images%20(13).jpeg
+",
+      "https://github.com/dogamanzara243-hue/ford-transit-yedek-parca/blob/main/data/img/Motor/images%20(10).jpeg",
+      "https://github.com/dogamanzara243-hue/ford-transit-yedek-parca/blob/main/data/img/Motor/images%20(11).jpeg"
     ],
     "aciklama": "Düşük kilometreli araçtan sökülmüş, kompresyon testleri yapılmış, muhayyer ve faturalı komple 2.2 TDCi motor."
   },
