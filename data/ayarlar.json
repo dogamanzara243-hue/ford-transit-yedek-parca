@@ -15,13 +15,13 @@
   "ust_butonlar": [
     {
       "metin": "Tüm İlanlar",
-      "link": "#ilanlar-vitrin",
+      "link": "index.html#ilanlar-vitrin",
       "ikon": "fa-list",
       "aktif": true
     },
     {
       "metin": "Kategoriler",
-      "link": "#kategoriler-bolumu",
+      "link": "index.html#kategoriler-bolumu",
       "ikon": "fa-layer-group",
       "aktif": true
     },

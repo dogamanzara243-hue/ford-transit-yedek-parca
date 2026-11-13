@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head><meta charset="UTF-8"><title>İlan Detay | TRANSİT PARÇA DÜNYASI</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="css/style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Detay | TRANSİT PARÇA DÜNYASI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body class="flex flex-col min-h-screen">
+    
     <div id="ust-reklam-alani"></div>
     <header class="bg-ana text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
@@ -17,7 +25,12 @@
             <div id="ust-butonlar-alani" class="flex flex-wrap items-center gap-2"></div>
         </div>
     </header>
-    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full"><div id="ilan-detay-konteyner" class="bg-white rounded-2xl shadow border p-6"></div></main>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+        <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-vurgu mb-4 font-semibold"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
+        <div id="ilan-detay-konteyner" class="bg-white rounded-2xl shadow border p-6 md:p-8"></div>
+    </main>
+    
     <div id="alt-reklam-alani" class="max-w-7xl mx-auto px-4 my-10"></div>
     <footer class="bg-ana text-slate-300 pt-12 pb-8 mt-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,5 +50,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/app.js"></script></body>
+    
+    <script src="js/app.js"></script>
+</body>
 </html>
