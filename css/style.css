@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root {
+    --ana-renk: #0f2942;
+    --vurgu-renk: #e65100;
+    --arkaplan-renk: #f8fafc;
+    --kart-radius: 14px;
+}
+body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--arkaplan-renk); color: #1e293b; }
+.bg-ana { background-color: var(--ana-renk); }
+.text-ana { color: var(--ana-renk); }
+.bg-vurgu { background-color: var(--vurgu-renk); }
+.text-vurgu { color: var(--vurgu-renk); }
+.kart-stil { border-radius: var(--kart-radius); transition: all 0.25s ease; }
+.kart-stil:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(15, 41, 66, 0.15); }
+.btn-wp { background-color: #25D366; color: white; }
+.btn-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: white; }
+.btn-msg { background-color: #0084FF; color: white; }
+.btn-fb { background-color: #1877F2; color: white; }

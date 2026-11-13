@@ -1,0 +1,50 @@
+[
+  {
+    "id": "motor",
+    "baslik": "Motor & Mekanik",
+    "aciklama": "Komple sandık motor, silindir kapağı, turbo, enjektör ve piston grupları.",
+    "ikon": "fa-gears",
+    "gorsel": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  },
+  {
+    "id": "kaporta",
+    "baslik": "Kaporta & Aydınlatma",
+    "aciklama": "Ön tampon, far, stop lambası, çamurluk, kaput ve sürgülü kapı aksamları.",
+    "ikon": "fa-car-side",
+    "gorsel": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  },
+  {
+    "id": "sanziman",
+    "baslik": "Şanzıman & Aktarma",
+    "aciklama": "6 ileri manuel şanzıman, diferansiyel, şaft, aks ve debriyaj setleri.",
+    "ikon": "fa-cog",
+    "gorsel": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  },
+  {
+    "id": "fren-suspansiyon",
+    "baslik": "Fren & Ön Takım",
+    "aciklama": "Fren diski, balata, amortisör, salıncak, makas ve direksiyon kutusu.",
+    "ikon": "fa-compact-disc",
+    "gorsel": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  },
+  {
+    "id": "elektrik",
+    "baslik": "Elektrik & Beyin (ECU)",
+    "aciklama": "Motor beyni, marş dinamosu, şarj dinamosu, tesisat ve sensör çeşitleri.",
+    "ikon": "fa-bolt",
+    "gorsel": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  },
+  {
+    "id": "cikma-parca",
+    "baslik": "Garantili Çıkma Parçalar",
+    "aciklama": "Kazalı/pert araçlardan sökülmüş, test edilmiş orijinal ikinci el parçalar.",
+    "ikon": "fa-recycle",
+    "gorsel": "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=80",
+    "aktif": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "FT-1001",
+    "baslik": "Ford Transit V363 2.2 TDCi Komple Çıkma Motor (Euro 5)",
+    "kategori": "motor",
+    "durum": "İkinci El / Çıkma",
+    "uyumlu_model": "2014 - 2018 Transit V363",
+    "oem_kodu": "BK3Q-6007-AA",
+    "fiyat": "Fiyat Sorunuz",
+    "one_cikan": true,
+    "gorsel": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
+    "aciklama": "Düşük kilometreli araçtan sökülmüş, kompresyon testleri yapılmış, muhayyer ve faturalı komple 2.2 TDCi motor."
+  },
+  {
+    "id": "FT-1002",
+    "baslik": "Ford Transit V347 Ön Tampon ve Panjur Seti (Sıfır)",
+    "kategori": "kaporta",
+    "durum": "Sıfır Ürün",
+    "uyumlu_model": "2007 - 2013 Transit V347",
+    "oem_kodu": "6C11-17757-AA",
+    "fiyat": "4.250 TL",
+    "one_cikan": true,
+    "gorsel": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    "aciklama": "Birinci sınıf ithal sıfır ön tampon. Birebir kalıp uyumludur."
+  }
+]
