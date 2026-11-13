@@ -34,8 +34,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else if (path.includes('ilan-detay.html')) {
         const id = params.get('id');
         const ilan = ilanlar.find(i => i.id === id) || ilanlar[0];
+        
+        // Çoklu resim kontrolü (gorseller dizisi varsa ilkini al, yoksa eski gorsel alanını destekle)
+        const resimler = ilan.gorseller && ilan.gorseller.length > 0 ? ilan.gorseller : [ilan.gorsel || 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3'];
+        
         document.getElementById('ilan-detay-konteyner').innerHTML = `
-            <img src="${ilan.gorsel}" class="w-full h-64 md:h-80 object-cover rounded-xl mb-6 shadow-sm">
+            <!-- Ana Büyük Görsel -->
+            <div class="mb-4 bg-slate-100 rounded-xl overflow-hidden shadow-sm h-64 md:h-96">
+                <img id="ana-fotograf" src="${resimler[0]}" class="w-full h-full object-cover transition duration-300">
+            </div>
+            
+            <!-- Küçük Resim Galerisi (Thumbnail listesi) -->
+            ${resimler.length > 1 ? `
+            <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+                ${resimler.map((img, idx) => `
+                    <button onclick="document.getElementById('ana-fotograf').src='${img}'" class="w-20 h-20 rounded-lg overflow-hidden border-2 border-slate-200 hover:border-vurgu shrink-0 focus:outline-none focus:border-vurgu shadow-sm">
+                        <img src="${img}" class="w-full h-full object-cover">
+                    </button>
+                `).join('')}
+            </div>` : ''}
+
             <span class="bg-vurgu text-white text-xs font-bold px-3 py-1 rounded-lg">${ilan.durum}</span>
             <h1 class="text-2xl md:text-3xl font-extrabold text-ana mt-3 mb-2">${ilan.baslik}</h1>
             <p class="text-vurgu font-extrabold text-2xl mb-4">${ilan.fiyat}</p>
@@ -77,9 +95,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function kart(ilan, ayarlar) {
+    // Kartlarda her zaman dizideki ilk resim kapak fotoğrafı olarak görünür
+    const kapakResmi = ilan.gorseller && ilan.gorseller.length > 0 ? ilan.gorseller[0] : (ilan.gorsel || 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3');
     return `
     <div class="bg-white border rounded-2xl overflow-hidden shadow-sm kart-stil flex flex-col">
-        <a href="ilan-detay.html?id=${ilan.id}"><img src="${ilan.gorsel}" class="h-48 w-full object-cover"></a>
+        <a href="ilan-detay.html?id=${ilan.id}"><img src="${kapakResmi}" class="h-48 w-full object-cover"></a>
         <div class="p-4 flex flex-col flex-grow justify-between">
             <div>
                 <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded font-bold">${ilan.durum}</span>

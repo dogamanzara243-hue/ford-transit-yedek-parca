@@ -8,7 +8,11 @@
     "oem_kodu": "BK3Q-6007-AA",
     "fiyat": "Fiyat Sorunuz",
     "one_cikan": true,
-    "gorsel": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
+    "gorseller": [
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+    ],
     "aciklama": "Düşük kilometreli araçtan sökülmüş, kompresyon testleri yapılmış, muhayyer ve faturalı komple 2.2 TDCi motor."
   },
   {
@@ -20,7 +24,10 @@
     "oem_kodu": "6C11-17757-AA",
     "fiyat": "4.250 TL",
     "one_cikan": true,
-    "gorsel": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    "gorseller": [
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80"
+    ],
     "aciklama": "Birinci sınıf ithal sıfır ön tampon. Birebir kalıp uyumludur."
   },
   {
@@ -32,7 +39,9 @@
     "oem_kodu": "CC1R-7003-BD",
     "fiyat": "28.500 TL",
     "one_cikan": true,
-    "gorsel": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80",
+    "gorseller": [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
+    ],
     "aciklama": "Senkromeç ve bilya bakımları yapılmış, ötme ve vites atma sorunu olmayan garantili MT82 6 ileri şanzıman."
   }
 ]
