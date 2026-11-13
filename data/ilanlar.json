@@ -9,9 +9,10 @@
     "fiyat": "Fiyat Sorunuz",
     "one_cikan": true,
     "gorseller": [
-       "data/img/Motor/images%20(13).jpeg",
-      "data/img/Motor/images%20(10).jpeg",
-      "data/img/Motor/images%20(11).jpeg"
+       "https://raw.githubusercontent.com/dogamanzara243-hue/ford-transit-yedek-parca/main/data/img/Motor/images%20(10).jpeg",
+            "https://raw.githubusercontent.com/dogamanzara243-hue/ford-transit-yedek-parca/main/data/img/Motor/images%20(11).jpeg",
+            "https://raw.githubusercontent.com/dogamanzara243-hue/ford-transit-yedek-parca/main/data/img/Motor/images%20(12).jpeg",
+            "https://raw.githubusercontent.com/dogamanzara243-hue/ford-transit-yedek-parca/main/data/img/Motor/images%20(13).jpeg"
     ],
     "aciklama": "Düşük kilometreli araçtan sökülmüş, kompresyon testleri yapılmış, muhayyer ve faturalı komple 2.2 TDCi motor."
   },
