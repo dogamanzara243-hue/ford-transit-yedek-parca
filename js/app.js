@@ -25,6 +25,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             .filter(b => b.aktif)
             .map(b => `<a href="${b.link}" class="px-3 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-vurgu text-white transition flex items-center gap-1.5"><i class="${b.ikon}"></i> ${b.metin}</a>`).join('');
 
+        // Reklam Alanı Yükleme
+        const ustReklam = (reklamlar || []).find(r => r.aktif && r.konum === 'ust_banner');
+        const ustReklamAlani = document.getElementById('ust-reklam-alani');
+        if (ustReklam && ustReklamAlani) {
+            ustReklamAlani.innerHTML = `
+                <div style="background: ${ustReklam.arkaplan}" class="text-white py-2 px-4 text-center text-xs md:text-sm font-bold flex flex-wrap items-center justify-center gap-2">
+                    <span>${ustReklam.baslik}</span>
+                    ${ustReklam.buton_metin ? `<a href="${ustReklam.link}" target="_blank" class="bg-white text-slate-900 px-2.5 py-0.5 rounded-md text-xs font-extrabold hover:bg-slate-100 transition">${ustReklam.buton_metin}</a>` : ''}
+                </div>
+            `;
+        }
+
         const path = window.location.pathname;
         const params = new URLSearchParams(window.location.search);
 
@@ -40,17 +52,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             const resimler = ilan.gorseller && ilan.gorseller.length > 0 ? ilan.gorseller : [ilan.gorsel || 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3'];
             
             document.getElementById('ilan-detay-konteyner').innerHTML = `
-                <div class="mb-4 bg-slate-100 rounded-xl overflow-hidden shadow-sm h-64 md:h-96">
-                    <img id="ana-fotograf" src="${resimler[0]}" class="w-full h-full object-cover transition duration-300">
+                <!-- Tam Boyutlu (Kırpılmayan) ve Tıklanabilir Ana Fotoğraf -->
+                <div onclick="tamEkranAc(document.getElementById('ana-fotograf').src)" class="relative group cursor-zoom-in mb-4 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden flex items-center justify-center p-2 min-h-[250px] max-h-[550px]">
+                    <img id="ana-fotograf" src="${resimler[0]}" class="max-w-full max-h-[520px] object-contain transition duration-300">
+                    <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-sm">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Büyütmek için tıkla
+                    </div>
                 </div>
+
+                <!-- Küçük Resim Galerisi (Thumbnail) -->
                 ${resimler.length > 1 ? `
                 <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
-                    ${resimler.map((img, idx) => `
-                        <button onclick="document.getElementById('ana-fotograf').src='${img}'" class="w-20 h-20 rounded-lg overflow-hidden border-2 border-slate-200 hover:border-vurgu shrink-0 focus:outline-none focus:border-vurgu shadow-sm">
-                            <img src="${img}" class="w-full h-full object-cover">
+                    ${resimler.map((img) => `
+                        <button onclick="document.getElementById('ana-fotograf').src='${img}'" class="w-20 h-20 bg-slate-50 rounded-lg overflow-hidden border-2 border-slate-200 hover:border-vurgu shrink-0 focus:outline-none focus:border-vurgu shadow-sm flex items-center justify-center p-1">
+                            <img src="${img}" class="max-w-full max-h-full object-contain">
                         </button>
                     `).join('')}
                 </div>` : ''}
+
                 <span class="bg-vurgu text-white text-xs font-bold px-3 py-1 rounded-lg">${ilan.durum}</span>
                 <h1 class="text-2xl md:text-3xl font-extrabold text-ana mt-3 mb-2">${ilan.baslik}</h1>
                 <p class="text-vurgu font-extrabold text-2xl mb-4">${ilan.fiyat}</p>
@@ -67,6 +86,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <a href="${il.instagram_url}" target="_blank" class="btn-ig px-4 py-3 rounded-xl font-bold text-center flex items-center justify-center gap-2">
                         <i class="fa-brands fa-instagram text-lg"></i> Instagram ile Yaz
                     </a>
+                </div>
+
+                <!-- Tam Ekran Büyüteç (Lightbox) Penceresi -->
+                <div id="lightbox-modal" onclick="tamEkranKapat()" class="fixed inset-0 bg-black/90 z-[9999] hidden items-center justify-center p-4 backdrop-blur-sm cursor-zoom-out">
+                    <button onclick="tamEkranKapat()" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <img id="lightbox-img" src="" class="max-w-full max-h-[92vh] object-contain rounded-lg shadow-2xl">
                 </div>
             `;
         } else {
@@ -94,11 +121,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+// Tam ekran büyüteç açma / kapama fonksiyonları
+function tamEkranAc(resimUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    if (modal && img) {
+        img.src = resimUrl;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+}
+
+function tamEkranKapat() {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+}
+
+// ESC tuşu ile tam ekrandan çıkma desteği
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') tamEkranKapat();
+});
+
 function kart(ilan, ayarlar) {
     const kapakResmi = ilan.gorseller && ilan.gorseller.length > 0 ? ilan.gorseller[0] : (ilan.gorsel || 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3');
     return `
     <div class="bg-white border rounded-2xl overflow-hidden shadow-sm kart-stil flex flex-col">
-        <a href="ilan-detay.html?id=${ilan.id}"><img src="${kapakResmi}" class="h-48 w-full object-cover"></a>
+        <a href="ilan-detay.html?id=${ilan.id}" class="bg-slate-50 border-b border-slate-100 h-52 w-full flex items-center justify-center p-2 overflow-hidden">
+            <img src="${kapakResmi}" class="max-h-full max-w-full object-contain">
+        </a>
         <div class="p-4 flex flex-col flex-grow justify-between">
             <div>
                 <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded font-bold">${ilan.durum}</span>
@@ -110,4 +163,4 @@ function kart(ilan, ayarlar) {
             </div>
         </div>
     </div>`;
-}
+        }
